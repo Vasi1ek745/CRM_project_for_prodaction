@@ -1,0 +1,41 @@
+<div class="m-2 p-2">
+
+	
+	<div class="m-2 p-2 border border-2  shadow-lg">
+	<h3 class="m-2 p-2 px-3 py-3 border border-2 rounded  shadow-lg fw-light">Добавить нового ученика</h3>
+		<%= form_with model: @student do |form| %>
+			<div class="input-group flex-nowrap m-2 w-75 ">
+				<%= form.label "Имя" , class:"input-group-text" %>
+				<%= form.text_field :name, class:"form-control " ,placeholder:"Имя" , required: true, minlength:3%>
+			</div>
+			<div class="input-group flex-nowrap m-2 w-75">
+				<%= form.label "Предмет", class:"input-group-text" %>
+				<%= form.select :subject, ["Математика","Физика","Математика + Физика"], options = {}, class:"form-select" %>
+
+				<%= form.label "Класс" , class:"input-group-text" %>
+			 	<%= form.select :class_in_school, (7..11).to_a, options = {}, class:"form-select"  %>
+			</div>
+ 			<div class="input-group flex-nowrap m-2 w-75">
+				<%= form.label "Место", class:"input-group-text" %>
+			 	<%= form.select :location, ["Дом", "Онлайн", "Выезд"], options = {}, class:"form-select"  %>
+
+				<%= form.label "Оплата в час", class:"input-group-text" %>
+			 	<%= form.select :pay_by_hour, [700,800, 900,1000,1100], options = {}, class:"form-select"  %>
+			</div>
+			<div class="input-group flex-nowrap m-2 w-75"> 
+				<%= form.label "Номер телефона",class:"input-group-text" %>
+				<%= form.text_field :phone_number , class:"form-control" ,placeholder:"+7......"%>	
+			</div>
+			<div class="input-group flex-nowrap m-2 w-75"> 
+				<%= form.label "Дополнительная информация",class:"input-group-text" %>
+				<%= form.text_field :other , class:"form-control" ,placeholder:"Дополнительная информация"%>	
+			</div>
+			<div class="input-group flex-nowrap m-2 mt-3 "> 
+				<%= form.submit  button_name , class:"input-group-text p-2" %>
+			</div>
+			
+			
+		<% end %>
+	</div>
+</div>
+
