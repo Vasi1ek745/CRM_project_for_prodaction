@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.1"
 
-set :application, "myapp"
+set :application, "CRM_project_for_prodaction"
 set :repo_url, "git@github.com:Vasi1ek745/CRM_project_for_prodaction.git"
 
 set :deploy_to, "/home/deploy/#{fetch :application}"
